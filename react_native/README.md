@@ -16,6 +16,26 @@ npm install react-native-in-app-review
 yarn add react-native-in-app-review
 ```
 
+## Installing from this repository
+
+If you want to use a commit or tag that hasn't been published to npm you can
+install the package directly from Git. First build the package so that the
+`dist` folder is generated:
+
+```bash
+npm run build
+```
+
+Then from your React Native project run:
+
+```bash
+npm install <git-url>#<tag> --workspace=react_native
+```
+
+After installation React Native will autolink the native module. On iOS run
+`npx pod-install` (or `cd ios && pod install`) to update the CocoaPods workspace.
+Android requires no additional steps when autolinking is enabled.
+
 ## Linking native modules
 
 React Native will autolink the native module after installation. For iOS you
