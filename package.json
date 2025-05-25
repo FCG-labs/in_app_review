@@ -1,10 +1,14 @@
 {
   "name": "react-native-in-app-review",
-  "version": "0.1.0",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "react-native": "dist/index.js",
   "types": "dist/index.d.ts",
-  "podspec": "ios/ReactNativeInAppReview.podspec",
+  "podspec": "ReactNativeInAppReview.podspec",
+  "author": "FCG-labs",
+  "license": "MIT",
+  "nativePackage": true,
+  "homepage": "https://github.com/FCG-labs/in_app_review",
   "files": ["dist", "ios", "android"],
   "scripts": {
     "build": "tsc",
