@@ -10,6 +10,7 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableMap;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
@@ -60,7 +61,7 @@ public class InAppReviewModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void openStoreListing(Promise promise) {
+    public void openStoreListing(ReadableMap options, Promise promise) {
         Activity activity = getCurrentActivity();
         if (activity == null) {
             promise.reject("error", "Activity not available");
