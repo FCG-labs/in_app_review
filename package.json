@@ -1,4 +1,17 @@
 {
-  "private": true,
-  "workspaces": ["react_native"]
+  "name": "react-native-in-app-review",
+  "version": "0.1.0",
+  "main": "react_native/dist/index.js",
+  "react-native": "react_native/dist/index.js",
+  "types": "react_native/dist/index.d.ts",
+  "podspec": "react_native/ios/ReactNativeInAppReview.podspec",
+  "files": ["react_native/dist", "react_native/ios", "react_native/android"],
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/react-native": "*"
+  }
 }
