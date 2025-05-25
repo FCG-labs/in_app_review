@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "src"],
+  "files": ["dist", "src", "ios"],
   "scripts": {
     "build": "tsc"
+  },
+  "react-native": {
+    "podspecPath": "ios/ReactNativeInAppReview.podspec"
   }
 }
