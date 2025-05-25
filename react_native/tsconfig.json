@@ -2,11 +2,18 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": ["es6"],
+    "lib": [
+      "es6"
+    ],
     "declaration": true,
     "outDir": "dist",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": [
+      "react-native"
+    ]
   },
-  "include": ["src", "typings"]
+  "include": [
+    "src"
+  ]
 }
