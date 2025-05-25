@@ -23,7 +23,7 @@ android {
     // Include the React Native module sources located at
     // android/src/main/java/com/inappreview
     sourceSets {
-        main.java.srcDirs += 'src/main/java'
+        main.java.srcDirs += 'src/main/java/com/inappreview'
     }
 }
 
