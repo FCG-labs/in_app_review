@@ -4,10 +4,17 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "podspecPath": "ios/ReactNativeInAppReview.podspec",
-  "files": ["dist", "ios", "android"],
+  "files": [
+    "dist",
+    "ios",
+    "android"
+  ],
   "scripts": {
     "build": "tsc",
     "postinstall": "tsc",
     "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/react-native": "*"
   }
 }
