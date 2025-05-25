@@ -6,14 +6,21 @@ name **`react-native-in-app-review`**.
 
 ## Publishing
 
-Run `npm run build` to compile the sources to the `dist` folder and then
-execute `npm publish` from this directory. The resulting package can be
-installed in a React Native project via npm or yarn.
+Before publishing to npm you must build the package. Run `npm run build` to
+compile the sources to the `dist` folder and then execute `npm publish` from
+this directory. The resulting package can be installed in a React Native
+project via npm or yarn.
 
 ```bash
 npm install react-native-in-app-review
 # or
 yarn add react-native-in-app-review
+```
+
+For iOS projects run:
+
+```bash
+cd ios && pod install
 ```
 
 ## Installing from this repository
@@ -29,7 +36,7 @@ npm run build
 Then from your React Native project run:
 
 ```bash
-npm install <git-url>#<tag>
+npm install <repo>#<tag>
 cd ios && pod install  # for iOS
 ```
 
