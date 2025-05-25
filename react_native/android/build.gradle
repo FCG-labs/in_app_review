@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 33
+    defaultConfig { minSdkVersion 21 }
+}
+
+dependencies {
+    implementation "com.google.android.play:review:2.0.2"
+    implementation "com.google.android.gms:play-services-base:18.2.0"
+}

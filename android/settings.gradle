@@ -1,2 +1,6 @@
 // Settings for the React Native library module
 rootProject.name = 'react-native-in-app-review'
+
+// Include the support library used by this repository
+include ':react_native'
+project(':react_native').projectDir = new File(settingsDir, '../react_native/android')
