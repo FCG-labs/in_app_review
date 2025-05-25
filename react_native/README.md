@@ -29,18 +29,30 @@ npm run build
 Then from your React Native project run:
 
 ```bash
-npm install <git-url>#<tag> --workspace=react_native
+npm install <git-url>#<tag>
+cd ios && pod install  # for iOS
 ```
 
-After installation React Native will autolink the native module. On iOS run
-`npx pod-install` (or `cd ios && pod install`) to update the CocoaPods workspace.
-Android requires no additional steps when autolinking is enabled.
+Android projects need to include the library module manually. Edit
+`settings.gradle` to add the module:
+
+```gradle
+include ':react-native-in-app-review'
+project(':react-native-in-app-review').projectDir =
+    new File(rootProject.projectDir, '../node_modules/react-native-in-app-review/android')
+```
+
+and update `app/build.gradle`:
+
+```gradle
+implementation project(':react-native-in-app-review')
+```
 
 ## Linking native modules
 
-React Native will autolink the native module after installation. For iOS you
-should run `npx pod-install` to update the CocoaPods workspace. Android requires
-no additional steps provided autolinking is enabled.
+React Native will autolink the native module after installation. On iOS run
+`npx pod-install` to update the CocoaPods workspace. If autolinking is disabled
+follow the manual steps above to add the module to your Android project.
 
 ## TypeScript API
 
@@ -61,5 +73,17 @@ import { requestReview, isAvailable, openStoreListing } from 'react-native-in-ap
 // Example usage
 if (await isAvailable()) {
   await requestReview();
+}
+```
+
+### JavaScript example
+
+```js
+import { requestReview, isAvailable } from 'react-native-in-app-review';
+
+async function maybeReview() {
+  if (await isAvailable()) {
+    await requestReview();
+  }
 }
 ```
