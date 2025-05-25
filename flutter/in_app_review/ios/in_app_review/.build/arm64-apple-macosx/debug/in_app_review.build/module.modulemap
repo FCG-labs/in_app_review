@@ -1,0 +1,4 @@
+module in_app_review {
+    header "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/in_app_review-Swift.h"
+    requires objc
+}

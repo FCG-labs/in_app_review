@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/master.swiftdeps"
+  },
+  "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/Sources/in_app_review/InAppReviewPlugin.swift": {
+    "dependencies": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/InAppReviewPlugin.d",
+    "object": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/InAppReviewPlugin.swift.o",
+    "swiftmodule": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/InAppReviewPlugin~partial.swiftmodule",
+    "swift-dependencies": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/InAppReviewPlugin.swiftdeps"
+  },
+  "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/resource_bundle_accessor.d",
+    "object": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/fcg_dev01/project/atflee/rn_module/in_app_review/flutter/in_app_review/ios/in_app_review/.build/arm64-apple-macosx/debug/in_app_review.build/resource_bundle_accessor.swiftdeps"
+  }
+}
