@@ -18,7 +18,7 @@ public class InAppReviewPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new InAppReviewModule(reactContext));
+        modules.add(new com.inappreview.InAppReviewModule(reactContext));
         return modules;
     }
 }
