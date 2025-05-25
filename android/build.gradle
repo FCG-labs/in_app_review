@@ -16,9 +16,7 @@ android {
     namespace 'com.inappreview'
     compileSdkVersion 33
 
-    defaultConfig {
-        minSdkVersion 16
-    }
+    defaultConfig { minSdkVersion 21 }
 
     // Include the React Native module sources located at
     // android/src/main/java/com/inappreview
@@ -35,4 +33,5 @@ repositories {
 dependencies {
     implementation 'com.facebook.react:react-native'
     implementation 'com.google.android.play:review:2.0.2'
+    implementation "com.google.android.gms:play-services-base:18.2.0"
 }
