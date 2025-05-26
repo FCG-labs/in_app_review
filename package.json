@@ -9,7 +9,7 @@
   "license": "MIT",
   "nativePackage": true,
   "homepage": "https://github.com/FCG-labs/in_app_review",
-  "files": ["dist", "ios", "android"],
+  "files": ["dist", "ios", "android","ReactNativeInAppReview.podspec"],
   "scripts": {
     "build:check": "tsc --traceResolution > trace.log",
     "build": "tsc",
