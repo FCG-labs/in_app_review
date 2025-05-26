@@ -1,14 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es6",
     "lib": [
-      "es6"
+      "ES2015"
     ],
     "declaration": true,
     "outDir": "dist",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmitOnError": false,
+    "moduleDetection": "force",
+    "moduleResolution": "node",
+    "baseUrl": ".", // 필수
+    "paths": {
+      "react-native": ["node_modules/react-native"]
+    },
+    "typeRoots": ["node_modules/@types"],
+    "types": []
   },
   "include": [
     "src"

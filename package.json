@@ -11,6 +11,7 @@
   "homepage": "https://github.com/FCG-labs/in_app_review",
   "files": ["dist", "ios", "android"],
   "scripts": {
+    "build:check": "tsc --traceResolution > trace.log",
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
