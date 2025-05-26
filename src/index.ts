@@ -8,7 +8,7 @@ export interface OpenStoreOptions {
 const MODULE_NAME = 'InAppReviewModule';
 const InAppReviewModule = NativeModules[MODULE_NAME] as {
   isAvailable: () => Promise<boolean>;
-  requestReview: () => Promise<void>;
+  requestReview: (isFakeMode?: boolean) => Promise<void>;
   openStoreListing: (options: OpenStoreOptions) => Promise<void>;
 };
 
@@ -23,9 +23,9 @@ export async function isAvailable(): Promise<boolean> {
   return InAppReviewModule.isAvailable();
 }
 
-export async function requestReview(): Promise<void> {
+export async function requestReview(isFakeMode?: boolean): Promise<void> {
   ensureAvailable();
-  return InAppReviewModule.requestReview();
+  return InAppReviewModule.requestReview(isFakeMode);
 }
 
 export async function openStoreListing(options: OpenStoreOptions = {}): Promise<void> {

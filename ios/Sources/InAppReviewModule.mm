@@ -18,10 +18,13 @@ RCT_EXPORT_METHOD(isAvailable:(RCTPromiseResolveBlock)resolve
   }
 }
 
-RCT_EXPORT_METHOD(requestReview:(RCTPromiseResolveBlock)resolve
+RCT_EXPORT_METHOD(requestReview:(BOOL)isFakeMode
+                  resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
   if (@available(iOS 10.3, *)) {
+    if(isFakeMode){}else{}
+    
     [SKStoreReviewController requestReview];
   }
   resolve(nil);
