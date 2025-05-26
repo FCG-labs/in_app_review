@@ -20,6 +20,7 @@ import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.play.core.review.testing.FakeReviewManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -69,27 +70,47 @@ public class InAppReviewModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void requestReview(Promise promise) {
+    public void requestReview(Boolean isFakeMode, Promise promise) {
         Activity activity = getCurrentActivity();
         if (activity == null) {
             promise.reject("error", "Activity not available");
             return;
         }
         if (reviewInfo != null) {
-            manager.launchReviewFlow(activity, reviewInfo)
-                    .addOnCompleteListener(task -> promise.resolve(null));
+            if(isFakeMode == null || !isFakeMode)
+                manager.launchReviewFlow(activity, reviewInfo)
+                        .addOnCompleteListener(task -> promise.resolve(null));
+            else 
+                new FakeReviewManager(getReactApplicationContext()).launchReviewFlow(activity, reviewInfo)
+                        .addOnCompleteListener(t -> promise.resolve(null));
             return;
         }
-        Task<ReviewInfo> request = manager.requestReviewFlow();
-        request.addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                reviewInfo = task.getResult();
-                manager.launchReviewFlow(activity, reviewInfo)
-                        .addOnCompleteListener(t -> promise.resolve(null));
-            } else {
-                promise.reject("error", "In-App Review API unavailable");
-            }
-        });
+
+        if(isFakeMode){
+            ReviewManager fakeManager = new FakeReviewManager(getReactApplicationContext());
+            Task<ReviewInfo> fakeRequest = fakeManager.requestReviewFlow();
+            fakeRequest.addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    reviewInfo = task.getResult();
+                    fakeManager.launchReviewFlow(activity, reviewInfo)
+                            .addOnCompleteListener(t -> promise.resolve(null));
+                } else {
+                    promise.reject("error", "In-App Review API unavailable");
+                }
+            });
+        }else{
+            Task<ReviewInfo> request = manager.requestReviewFlow();
+            request.addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    reviewInfo = task.getResult();
+                    manager.launchReviewFlow(activity, reviewInfo)
+                            .addOnCompleteListener(t -> promise.resolve(null));
+                } else {
+                    promise.reject("error", "In-App Review API unavailable");
+                }
+            });
+        }
+        
     }
 
     @ReactMethod
