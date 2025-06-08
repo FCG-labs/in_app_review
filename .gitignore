@@ -6,3 +6,4 @@
 **/.DS_Store
 example/**
 android/.gradle/*
+flutter/in_app_review/ios/in_app_review/.build/*
