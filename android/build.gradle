@@ -10,7 +10,6 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.facebook.react'
 
 android {
     namespace 'com.inappreview'
@@ -35,3 +34,4 @@ dependencies {
     implementation 'com.google.android.play:review:2.0.2'
     implementation "com.google.android.gms:play-services-base:18.2.0"
 }
+
